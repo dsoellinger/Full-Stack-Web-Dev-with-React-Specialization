@@ -120,3 +120,48 @@ Breadcrumbs can be defined as follows:
 </ol>
 ```
 
+
+
+## Icon Fonts
+
+Icon Fonts provides a set of symbols and glyphs that can be used to style our website which can also be styled like regular fonts. Two well-known style package is called **Font Awesome** and **Bootstrap-Social**.
+
+#### Import Font Awesome
+Font Awesome can be imported by means of CSS stylesheets. After installing the `bootstrap-social`/ `font-awesome` package font via npm the corresponding stylesheets need to be imported as follows:
+
+```
+<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+```
+
+#### Using font-awesome
+
+Font-Awesome tags can be defined using the `fa` attribute(s). Sticking to the HTML standard, span-tags should be used to add icons. Nevertheless, in practice we will also encounter the usage of i (italic)-tags which is obviously wrong from a semantic point of view.  This is probably caused by the fact that the i-tag is shorter (less data have to be transmitted) and the "i" is often misinterpreted to stand for the term "icon". 
+
+```
+<span class="fa fa-home fa-lg"></span>
+<i class="fa fa-google-plus"></i>
+```
+
+##### Adjusting the icon size
+
+The icon size can be adjusted using the following attributes:
+- fa-lg
+- fa-2x
+- fa-3x
+- fa-4x
+- fa-5x
+
+#### Using Bootstrap-Social buttons
+
+Bootstrap-Social is typically used together with Font Awesome icons. It provides a simple way to add Font Awesome icons onto buttons.
+
+```
+<a class="btn btn-social-icon btn-google" href="http://google.com/+">
+	<i class="fa fa-google-plus"></i>
+</a>
+<a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/">
+	<i class="fa fa-facebook"></i>
+</a>
+```
+
