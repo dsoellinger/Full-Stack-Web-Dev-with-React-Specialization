@@ -8,7 +8,7 @@
 
 Navbars can be defined as follows:
 
-```
+```html
 <nav class="navbar bg-primary navbar-dark navbar-expand-sm fixed-top">
 	<div class="container">
 		...
@@ -44,7 +44,7 @@ Can be done using the `fixed-top` attribute. It might be required to add additio
 
 ##### Adding a logo
 Adding a logo is easy and can be done using the `navbar-brand` attribute.
-```
+```html
 <nav class="navbar bg-primary navbar-dark navbar-expand-sm fixed-top">
 	<div class="container">
 		<a class="navbar-brand" href="#">Logo</a>
@@ -56,7 +56,7 @@ A full-height and lightweight navigation (including support for dropdowns) can b
 
 Active states—with `active`—to indicate the current page can be applied directly to `nav-link`s or their immediate parent `nav-item`s.
 
-```
+```html
 <nav class="navbar navbar-dark navbar-expand-sm bg-primary">
 	<div class="container">
         <ul class="navbar-nav mr-auto">
@@ -74,7 +74,7 @@ The menu position can be influenced using the `mr-auto` (push items to the left)
 
 Here's an example of a toggle-button added to the navigation bar. As we can see the button controls the visibility of the component with the id `Navbar`. This requires us to wrap the menu items in a component with the specified id.
 
-```
+```html
 <nav class="navbar navbar-dark navbar-expand-sm bg-primary">
 	<div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" 
@@ -84,7 +84,7 @@ Here's an example of a toggle-button added to the navigation bar. As we can see 
 </nav>
 ```
 
-```
+```html
 <div class="collapse navbar-collapse" id="Navbar">
 	<ul class="navbar-nav mr-auto">
 		<li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
@@ -113,7 +113,7 @@ It typically also indicates the current page's location within a navigational hi
 
 Breadcrumbs can be defined as follows:
 
-```
+```html
 <ol class="breadcrumb">
 	<li class="breadcrumb-item"><a href="#">Home</a></li>
     <li class="breadcrumb-item active">Library</li>
@@ -129,7 +129,7 @@ Icon Fonts provides a set of symbols and glyphs that can be used to style our we
 #### Import Font Awesome
 Font Awesome can be imported by means of CSS stylesheets. After installing the `bootstrap-social`/ `font-awesome` package font via npm the corresponding stylesheets need to be imported as follows:
 
-```
+```html
 <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
 ```
@@ -138,7 +138,7 @@ Font Awesome can be imported by means of CSS stylesheets. After installing the `
 
 Font-Awesome tags can be defined using the `fa` attribute(s). Sticking to the HTML standard, span-tags should be used to add icons. Nevertheless, in practice we will also encounter the usage of i (italic)-tags which is obviously wrong from a semantic point of view.  This is probably caused by the fact that the i-tag is shorter (less data have to be transmitted) and the "i" is often misinterpreted to stand for the term "icon". 
 
-```
+```html
 <span class="fa fa-home fa-lg"></span>
 <i class="fa fa-google-plus"></i>
 ```
@@ -156,7 +156,7 @@ The icon size can be adjusted using the following attributes:
 
 Bootstrap-Social is typically used together with Font Awesome icons. It provides a simple way to add Font Awesome icons onto buttons.
 
-```
+```html
 <a class="btn btn-social-icon btn-google" href="http://google.com/+">
 	<i class="fa fa-google-plus"></i>
 </a>
@@ -165,3 +165,27 @@ Bootstrap-Social is typically used together with Font Awesome icons. It provides
 </a>
 ```
 
+
+
+## Buttons and button groups
+
+Button groups group buttons together on a single line.
+
+#### Defining button groups
+
+```html
+<div class="btn-group" role="group">
+	<a role="button" class="btn btn-primary" href="tel:+85212345678">
+		<i class="fa fa-phone"></i> Call
+	</a>
+    <a role="button" class="btn btn-info">
+    	<i class="fa fa-skype"></i> Skype
+    </a>
+</div>
+```
+
+Note that for assistive technologies (such as screen readers) to convey that a series of buttons is grouped, an appropriate `role` attribute needs to be provided. For button groups, this would be `role="group"`, while toolbars should have a `role="toolbar"`.
+
+#### "button" vs "a" tag
+
+Both type of tags can be used to define a bootstrap button. However, if the button should cause an action that can be triggered via an *href* tag, the a-tag is required. Otherwise, we can use the button-tag.
