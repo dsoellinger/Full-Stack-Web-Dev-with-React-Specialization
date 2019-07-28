@@ -189,3 +189,81 @@ Note that for assistive technologies (such as screen readers) to convey that a s
 #### "button" vs "a" tag
 
 Both type of tags can be used to define a bootstrap button. However, if the button should cause an action that can be triggered via an *href* tag, the a-tag is required. Otherwise, we can use the button-tag.
+
+
+
+## Forms
+
+Bootstrap provides three different types of form layouts:
+
+- Vertical Form (default form layout)
+- Horizontal Form
+- Inline Form
+
+#### Alignment
+
+##### Vertical forms
+
+Elements are aligned vertically by default. Therefore no additional attribute needs to be added to the `form-group` class.
+
+```html
+<form>
+	<div class="form-group">
+        <label for="inputEmail">Email</label>
+        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+    </div>
+    <div class="form-group">
+		<label for="inputPassword">Password</label>
+        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+    </div>
+</form>
+```
+
+##### Horizontal forms
+
+Horizontal alignment can be achieved using Bootstrap grid classes. We just need to add the `row` class to the `form-group` and position the elements inside using `col` classes. 
+
+```html
+<form>
+    <div class="form-group row">
+        <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+        </div>
+    </div>
+</form>
+```
+
+##### Inline forms
+
+Used if we want to display a series of labels, form controls and buttons on a single horizontal row to compact the layout. This can be achieved by adding the `form-inline` class to the `form-group` element.
+
+```html
+<form class="form-inline">
+    <div class="form-group mr-2">
+        <label class="sr-only" for="inputEmail">Email</label>
+        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+    </div>
+</form>
+```
+
+#### Form controls
+
+Textual form controls—like `<input>`s, `<select>`s, and `<textarea>`s—are styled with the `.form-control` class. Included are styles for general appearance, focus state, sizing, and more.
+
+At this point we need to keep the different <a href="https://www.w3schools.com/html/html_form_input_types.asp">types of input elements </a>in our mind to ensure the correct type of input validation.
+
+```html
+<form>
+	<div class="form-group row">
+		<label for="firstname" class="col-md-2 col-form-label">First Name</label>
+		<div class="col-md-10">
+			<input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name">
+		</div>
+	</div>
+</form>
+```
+
+##### Difference between the name and the id attribute
+
+The ID of a form input element has nothing to do with the data contained within the element. IDs are for hooking the element with JavaScript and CSS. The name attribute, however, is used in the HTTP request sent by your browser to the server as a variable name associated with the data contained in the value attribute.
