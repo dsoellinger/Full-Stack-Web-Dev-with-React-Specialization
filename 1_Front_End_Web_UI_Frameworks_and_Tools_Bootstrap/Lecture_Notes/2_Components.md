@@ -261,9 +261,88 @@ At this point we need to keep the different <a href="https://www.w3schools.com/h
 			<input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name">
 		</div>
 	</div>
+ 	<div class="form-group row">
+        <div class="offset-md-2 col-md-10">
+			<button type="submit" class="btn btn-primary">Send Feedback</button>
+		</div>
+	</div>
 </form>
 ```
 
 ##### Difference between the name and the id attribute
 
-The ID of a form input element has nothing to do with the data contained within the element. IDs are for hooking the element with JavaScript and CSS. The name attribute, however, is used in the HTTP request sent by your browser to the server as a variable name associated with the data contained in the value attribute.
+IDs are for hooking the element with JavaScript and CSS. The name attribute, however, is used in the HTTP request sent by your browser to the server as a variable name associated with the data contained in the value attribute.
+
+
+
+## Tables
+
+Tables in Bootstrap can be defined by assigning the base class `.table` to any `<table>` tag. 
+
+```html
+<table class="table table-striped">
+	<thead class="thead-dark">
+		<tr>
+			<th>&nbsp;</th>
+			<th>2013</th>
+    	</tr>
+	</thead>
+	<tbody>
+		<tr>
+        	<th>Employees</th>
+ 			<td>15</td>
+		</tr>
+    </tbody>
+</table>
+```
+
+However, the table will not be responsive by default. To make it responsive we need to wrap the table in a `.table-responsive{-sm|-md|-lg|-xl}` block. This will allow tables to be scrolled horizontally with ease.
+
+```html
+<div class="table-responsive">
+  <table class="table">
+    ...
+  </table>
+</div>
+```
+
+
+
+## Cards
+
+A **card** is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options. Cards can be defined with the class attribute `card`.
+
+```html
+<div class="card">
+	<h3 class="card-header bg-primary text-white">Facts At a Glance</h3>
+   	<div class="card-body">
+	<dl class="row">
+		<dt class="col-6">Started</dt>
+  		<dd class="col-6">3 Feb. 2013</dd>
+		<dt class="col-6">Major Stake Holder</dt>
+	</dl>
+</div>
+```
+
+
+
+#### Content types
+
+Cards support a wide variety of content, including images, text, list groups, links, and more.  Below are examples of what’s supported.
+
+- `card-body`
+
+  The main building block of a card. Use  whenever a padded section within a card is required.
+
+- `card-title`
+
+  Card titles are used by adding `.card-title` to a `<h*>` tag. The element is placed **within** the `card-body` element
+
+- `card-subtitle`
+
+- `card-img-top`
+
+  Places an image to the top of the card. The element is defined outside of the `card-body` block. We can also add text to the card using `card-text`
+
+- ...      https://getbootstrap.com/docs/4.0/components/card/
+
