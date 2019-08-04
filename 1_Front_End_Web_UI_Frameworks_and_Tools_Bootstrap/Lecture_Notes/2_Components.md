@@ -346,3 +346,34 @@ Cards support a wide variety of content, including images, text, list groups, li
 
 - ...      https://getbootstrap.com/docs/4.0/components/card/
 
+
+
+## Images
+
+Images can be made responsive (so they never become larger than their parent elements) with the `img-fluid` attribute. Alignment of images can be achieved with float helper classes or text alignment classes.
+
+```html
+<div class="col-12 col-sm text-center align-self-center">
+	<img src="img/logo.png" class="img-fluid">
+</div>
+```
+
+
+
+## Media Objects
+
+The [media object](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/) helps build complex and repetitive components where some media is positioned alongside content that doesn’t wrap around said media.
+
+Below is an example of a single media object. Only two classes are required—the wrapping `.media` and the `.media-body` around your content. Optional padding and margin can be controlled through [spacing utilities](https://getbootstrap.com/docs/4.0/utilities/spacing/).
+
+```html
+<div class="media">
+  <img class="mr-3" src="..." alt="Generic placeholder image">
+  <div class="media-body">
+    <h5 class="mt-0">Media heading</h5>
+    Cras sit amet nibh libero
+  </div>
+</div>
+```
+
+<img src="images/media_example.png" />
