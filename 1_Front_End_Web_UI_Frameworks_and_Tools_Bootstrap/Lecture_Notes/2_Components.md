@@ -377,3 +377,82 @@ Below is an example of a single media object. Only two classes are required—th
 ```
 
 <img src="images/media_example.png" />
+
+
+
+## Badges
+
+Badges can be used to display text more prominently on a website.
+
+```html
+<span class="badge badge-primary">Primary</span>
+<span class="badge badge-secondary">Secondary</span>
+<span class="badge badge-success">Success</span>
+<span class="badge badge-danger">Danger</span>
+<span class="badge badge-warning">Warning</span>
+<span class="badge badge-info">Info</span>
+<span class="badge badge-light">Light</span>
+<span class="badge badge-dark">Dark</span>
+```
+
+<img src="images/badges.png" />
+
+```html
+<span class="badge badge-pill badge-primary">Primary</span>
+<span class="badge badge-pill badge-secondary">Secondary</span>
+<span class="badge badge-pill badge-success">Success</span>
+<span class="badge badge-pill badge-danger">Danger</span>
+<span class="badge badge-pill badge-warning">Warning</span>
+<span class="badge badge-pill badge-info">Info</span>
+<span class="badge badge-pill badge-light">Light</span>
+<span class="badge badge-pill badge-dark">Dark</span>
+```
+
+<img src="images/badges_pill.png" />
+
+```html
+<a href="#" class="badge badge-primary">Primary</a>
+<a href="#" class="badge badge-secondary">Secondary</a>
+<a href="#" class="badge badge-success">Success</a>
+<a href="#" class="badge badge-danger">Danger</a>
+<a href="#" class="badge badge-warning">Warning</a>
+<a href="#" class="badge badge-info">Info</a>
+<a href="#" class="badge badge-light">Light</a>
+<a href="#" class="badge badge-dark">Dark</a>
+```
+
+<img src="images/badges_links.png" />
+
+
+
+## Alerts
+
+Alerts provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+```html
+<div class="alert alert-primary" role="alert">
+  This is a primary alert—check it out!
+</div>
+<div class="alert alert-secondary" role="alert">
+  This is a secondary alert—check it out!
+</div>
+```
+
+<img src="images/alert.png" />
+
+
+
+## Progress
+
+Can be used to show progress bars. Progress components are built with two HTML elements, some CSS to set the width, and a few attributes. We don't use the HTML5 progress-element.
+
+```html
+<div class="progress">
+  <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+```
+
+<img src="images/progress.png" />
+
+
+
