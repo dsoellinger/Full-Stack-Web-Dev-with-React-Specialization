@@ -504,3 +504,27 @@ Links can be used with the `href` attribute, or a button with the `data-target` 
 </div>
 ```
 
+
+
+## Accordion
+
+Using the card-component, the default collapse behavior can be used to create an accordion.
+
+```html
+<div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Collapsible Group Item #1
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus ...
+```
+
+<img src="images/accordion.png" />
+
