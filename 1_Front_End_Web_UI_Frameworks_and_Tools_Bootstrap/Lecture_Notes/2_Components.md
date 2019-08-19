@@ -190,6 +190,8 @@ Note that for assistive technologies (such as screen readers) to convey that a s
 
 Both type of tags can be used to define a bootstrap button. However, if the button should cause an action that can be triggered via an *href* tag, the a-tag is required. Otherwise, we can use the button-tag.
 
+When using button classes on `<a>` elements that are used to trigger in-page functionality (like collapsing content), rather than linking to new pages or sections within the current page, these links should be given a `role="button"` to appropriately convey their purpose to assistive technologies such as screen readers.
+
 
 
 ## Forms
@@ -527,4 +529,68 @@ Using the card-component, the default collapse behavior can be used to create an
 ```
 
 <img src="images/accordion.png" />
+
+
+
+## Tooltips
+
+To make use of tooltips we first need to add the following snippet to our webpage. This will initialize all tooltips by their data-toggle attribute.
+
+```html
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+```
+
+A tooltip can then be added to buttons by specifying its position, title and data-toggle attribute.
+
+```html
+<a role="button" href="#reservation" type="button" data-toggle="tooltip" data-placement="bottom" title="Or Call us at <br><strong>+852 12345678</strong>" data-html="true" class="btn btn-block nav-link btn-warning">Reserve table</a>
+
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
+```
+
+ **Note:** `data-html` needs to be added if the title includes html-tags.
+
+
+
+## Modals
+
+We can add dialogs to a website by means of the Bootstraps JavaScript modal plugin. Modals are always positioned over everything else in the document and remove scroll from the `<body>` so that modal content scrolls instead.
+
+Below we can see a static modal example.
+
+```html
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+### Activating a modal
+
+A modal can be activated by means of the `data-toggle` controller element along with a `data-target`.
+
+```html
+<button type="button" data-toggle="modal" data-target="#myModal">Launch modal</button>
+```
+
+
+
+
 
