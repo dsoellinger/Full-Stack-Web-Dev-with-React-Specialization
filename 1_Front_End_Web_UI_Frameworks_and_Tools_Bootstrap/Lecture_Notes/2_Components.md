@@ -631,7 +631,51 @@ A carousel is a slideshow component that allows cycling through elements.
     <li data-target="#indicator1" data-slide-to="0" class="active"></li>
     <li data-target="#indicator2" data-slide-to="1"></li>
   </ol>
+  <button class="btn btn-danger btn-sm" id="carouselButton">
+     <span id="carousel-button-icon" class="fa fa-pause"></span>
+   </button>
 </div>
 
+```
+
+##### Animating and controlling the slideshow
+
+The following snippet shows how to animate and add a control button to the slideshow.
+
+**Add the control button to the carousel:**
+
+```html
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  ...
+  <button class="btn btn-danger btn-sm" id="carouselButton">
+     <span id="carousel-button-icon" class="fa fa-pause"></span>
+   </button>
+</div>
+```
+
+**Initialize the animation and implement the control button's control logic:**
+
+```html
+....
+  <script>
+    $(document).ready(function() {
+      $("#mycarousel").carousel({
+        interval: 2000
+      });
+      $("#carouselButton").click(function() {
+        if ($("#carouselButton").children('span').hasClass('fa-pause')) {
+          $("#mycarousel").carousel('pause');
+          $("#carouselButton").children('span').removeClass('fa-pause');
+          $("#carouselButton").children('span').addClass('fa-play');
+        } else {
+          $("#mycarousel").carousel('cycle');
+          $("#carouselButton").children('span').removeClass('fa-play');
+          $("#carouselButton").children('span').addClass('fa-pause');
+        }
+      });
+    });
+  </script>
+
+</body>
 ```
 
