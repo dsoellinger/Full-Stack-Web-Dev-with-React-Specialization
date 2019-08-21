@@ -58,6 +58,27 @@ Mixins are similar to functions in programming languages. Mixins can group CSS i
 
 
 
+### Nested rules
+
+```less
+.carousel {
+    background:$background-dark;
+
+    .carousel-item {
+        height: $carousel-item-height;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-height: 300px;
+        }
+    }
+}
+
+```
+
+
+
 ### CSS compilation
 
 A less file can be converted to CSS with the following command:
