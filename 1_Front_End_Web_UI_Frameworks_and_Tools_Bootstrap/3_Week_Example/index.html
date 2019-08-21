@@ -22,7 +22,7 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
             <span class="navbar-toggler-icon"></span>
           </button>
-           <a class="navbar-brand mr-auto" href="#"><img src="img/logo.png" height="30" width="41"></a>
+           <a class="navbar-brand mr-auto" href="#"><img src="img/logo.png" height="30" width="41" alt="Ristorante Con Fusion"></a>
            <div class="collapse navbar-collapse" id="Navbar">
              <ul class="navbar-nav mr-auto">
                <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span> Home</a></li>
@@ -38,7 +38,7 @@
     </nav>
 
     <div id="loginModal" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" role="content">
+      <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title">Login </h4>
@@ -81,10 +81,10 @@
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                 </div>
                 <div class="col-12 col-sm-3 text-center align-self-center">
-                   <img src="img/logo.png" class="img-fluid">
+                   <img src="img/logo.png" class="img-fluid" alt="Ristorante con Fusion">
                 </div>
                 <div class="col-12 mt-5 mt-sm-0 col-sm-3 text-center align-self-center">
-                    <a role="button" href="#reservation" type="button" data-toggle="tooltip" data-placement="bottom"
+                    <a role="button" href="#reservation" data-toggle="tooltip" data-placement="bottom"
                     title="Or Call us at  <br><strong>+852 12345678</strong>" data-html="true" class="btn btn-block nav-link btn-warning">Reserve table</a>
                 </div>
             </div>
@@ -92,6 +92,47 @@
     </header>
 
     <div class="container">
+        <div class="row row-content">
+          <div class="col">
+            <div id="mycarousel" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                  <img class="d-block img-fluid" src="img/uthappizza.png" alt="uthappizza">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h2>Uthappizza <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-secondary">$4.99</span> </h2>
+                    <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block img-fluid" src="img/buffet.png" alt="buffet">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h2>Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
+                    <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block img-fluid" src="img/alberto.png" alt="alberto">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h2>Alberto Somayya</h2>
+                    <h4>Executive Chef</h4>
+                    <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
+                  </div>
+                </div>
+              </div>
+              <ol class="carousel-indicators">
+                <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#mycarousel" data-slide-to="1" class="active"></li>
+                <li data-target="#mycarousel" data-slide-to="2" class="active"></li>
+              </ol>
+              <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="previous">
+                <span class="carousel-control-prev-icon"></span>
+              </a>
+              <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </a>
+            </div>
+          </div>
+        </div>
         <div class="row row-content align-items-center">
             <div class="col-12 col-sm-4 order-sm-last col-md-3">
                 <h3>Our Lipsmacking Culinary Creations</h3>
@@ -172,10 +213,10 @@
                   <div class="form-group row">
                     <label class="col-12 col-sm-2">Date and Time</label>
                     <div class="col-12 col-sm-4">
-                      <input type="date" class="form-control" id="date" placeholder="Date">
+                      <input type="date" class="form-control" id="date">
                     </div>
                     <div class="col-12 col-sm-4">
-                      <input type="time" class="form-control" id="time" placeholder="Time">
+                      <input type="time" class="form-control" id="time">
                     </div>
                   </div>
                   <div class="form-group row">

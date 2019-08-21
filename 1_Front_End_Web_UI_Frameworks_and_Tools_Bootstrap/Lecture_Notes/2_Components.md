@@ -592,5 +592,46 @@ A modal can be activated by means of the `data-toggle` controller element along 
 
 
 
+## Carousel
 
+A carousel is a slideshow component that allows cycling through elements.
+
+**Note:** Carousels don’t automatically normalize slide dimensions. As such, you may need to use additional utilities or custom styles to appropriately size content.
+
+##### Slideshow with indicator, controls and captions
+
+```html
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block" src="..." alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+    	<h5>...</h5>
+    	<p>...</p>
+      </div>
+  </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block" src="..." alt="Second slide">
+      <div class="carousel-caption d-none d-md-block">
+    	<h5>...</h5>
+    	<p>...</p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+  	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  <ol class="carousel-indicators">
+    <li data-target="#indicator1" data-slide-to="0" class="active"></li>
+    <li data-target="#indicator2" data-slide-to="1"></li>
+  </ol>
+</div>
+
+```
 
