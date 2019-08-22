@@ -196,3 +196,94 @@ A scss file can be converted to CSS with the following command:
 sass style.scss style.css
 ```
 
+
+
+## Deployment
+
+To simplify the deployment process we want to fully automate the following steps:
+
+**CSS**
+
+- Compiling Sass or Less into CSS
+- Running autoprefixing to add vendor (browser) -specific prefixes
+- Minification (remove unnecessary characters from CSS files)
+- Concatenation of multiple CSS files into a single file
+
+**JavaScript**
+
+- JSHint - Check JavaScript code for errors
+- Concatenation
+- Uglification: Minification + Mangling (reduce local variables to a single letter)
+- Rechecking for errors
+
+**Other tasks**
+
+- Optimize the file size of images
+- Watch functionality: Automatically execute the tasks mentioned above once a file gets changed
+- Server and Live-Reload
+- Run tests
+- Build site for deployments
+
+
+
+### Useful NPM Scripts
+
+
+
+#### Onchange
+
+Onchange allows to specify a pattern to watch file sets. Once one of the files gets changed, Onchange executes the specified command.
+
+##### Installation
+
+```shell
+npm install --save-dev onchange
+```
+
+##### Usage
+
+After installing Onchange, its script can now be added to the package.json.
+
+The following example shows how to watch for changed `*.scss` files in the `css` folder. Once the file is changed, we trigger the recompilation of the scss file.
+
+```json
+"scripts": {
+	...
+    "scss": "node-sass -o css/ css/",
+    "watch:scss": "onchange 'css/*.scss' -- npm run scss"
+}
+```
+
+
+
+#### Parallelshell
+
+A simple npm module to run shell commands in parallel. All processes will share the same stdout/stderr, and if any command exits with a non-zero exit status, the rest are stopped and the exit code carries through.
+
+##### Installation
+
+```shell
+npm install --save-dev parallelshell
+```
+
+##### Usage
+
+After installing Parallelshell, its script can now be added to the package.json.
+
+The example below shows how to run the lite-server and the scss-watchdog in parallel.
+
+```json
+"scripts": {
+    "start": "npm run watch:all",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server",
+    "scss": "node-sass -o css/ css/",
+    "watch:scss": "onchange 'css/*.scss' -- npm run scss",
+    "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'"
+}
+```
+
+
+
+ 
+
