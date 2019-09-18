@@ -119,3 +119,17 @@ const element = <h1>Hello, world</h1>;
 
 However, unlike browser DOM elements, React elements are plain objects, and are cheap to create. React DOM takes care of updating the DOM to match the React elements.
 
+#### Adding Bootstrap to a React app
+
+Bootstrap can be easily installed using yarn just by adding the `bootstrap` package. However, the JavaScript part of Bootstrap cannot be directly used together with React. A Bootstrap-based packaged called `Reactstrap` provides a solution to this problem. Reactstrap supplies Bootstrap components re-implemented using React components (similar to JavaScript components re-implemented using React components in Reactstrap).
+
+**Installing the required packages**
+
+```shell
+yarn add bootstrap@4.0.0
+yarn add reactstrap@5.0.0
+yarn add react-popper@0.9.2
+```
+
+**Example: Add Bootstrap components to our JavaScript**
+
