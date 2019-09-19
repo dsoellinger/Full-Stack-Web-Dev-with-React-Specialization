@@ -128,6 +128,33 @@ When defining React components we should stick to the following convention:
 - User-defined component names must always start with a capital letter (these compile to React.createElement)
 - Tags starting with lowercase letters are treated as DOM tags (built-in components)
 
+#### Component lifecycle
+
+A React application is made up of multiple React components that  are connected together to form the entire screen of your React applications view.  Whenever a component is created, it is also added to the DOM of the application and the React Component Hierarchy. So, a component passes through what we call as the life cycle of a component.
+
+**Lifecycle**:
+
+- Mounting
+- Updating
+- Unmounting
+
+In each stage of the component lifecycle a set of functions is invoked (in the order specified below)
+
+**Mounting:**
+
+- constructor()
+- getDerivedStateFromProps()
+- render()
+- componentDidMount()
+
+**Updating:**
+
+- getDerivedStateFromProps()
+- shouldComponentUpdate()
+- render()
+- getSnapshotBeforeUpdate()
+- componentDidUpdate()
+
 #### Adding Bootstrap to a React app
 
 Bootstrap can be easily installed using yarn just by adding the `bootstrap` package. However, the JavaScript part of Bootstrap cannot be directly used together with React. A Bootstrap-based packaged called `Reactstrap` provides a solution to this problem. Reactstrap supplies Bootstrap components re-implemented using React components (similar to JavaScript components re-implemented using React components in Reactstrap).
