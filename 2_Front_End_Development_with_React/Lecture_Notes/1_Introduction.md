@@ -119,6 +119,15 @@ const element = <h1>Hello, world</h1>;
 
 However, unlike browser DOM elements, React elements are plain objects, and are cheap to create. React DOM takes care of updating the DOM to match the React elements.
 
+#### React components
+
+A component can be considered as a group of React elements that should be rendered together on the screen. They provide an easy way to split the UI into independent, reusable pieces.
+
+When defining React components we should stick to the following convention:
+
+- User-defined component names must always start with a capital letter (these compile to React.createElement)
+- Tags starting with lowercase letters are treated as DOM tags (built-in components)
+
 #### Adding Bootstrap to a React app
 
 Bootstrap can be easily installed using yarn just by adding the `bootstrap` package. However, the JavaScript part of Bootstrap cannot be directly used together with React. A Bootstrap-based packaged called `Reactstrap` provides a solution to this problem. Reactstrap supplies Bootstrap components re-implemented using React components (similar to JavaScript components re-implemented using React components in Reactstrap).
@@ -132,4 +141,39 @@ yarn add react-popper@0.9.2
 ```
 
 **Example: Add Bootstrap components to our JavaScript**
+
+Add the Bootstrap CSS to index.js
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
+import App from './App';
+```
+
+Reconfigure app.js to use Bootstrap components
+
+```jsx
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import { Navbar, NavbarBrand } from 'reactstrap';
+import './App.css';
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Navbar dark color="primary">
+          <div className="container">
+            <NavbarBrand href="/">Ristorante Con Fusion</NavbarBrand>
+          </div>
+        </Navbar>
+      </div>
+    );
+  }
+}
+
+export default App;
+```
 
