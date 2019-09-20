@@ -4,21 +4,6 @@ import { Card, CardImg, CardBody, CardText, CardTitle } from 'reactstrap';
 
 class DishDetail extends Component {
 
-  static months = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec'
-  ];
-
   convertDateToCommentDateFormat(timestamp) {
     const date = new Date(timestamp);
     return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
