@@ -155,6 +155,12 @@ In each stage of the component lifecycle a set of functions is invoked (in the o
 - getSnapshotBeforeUpdate()
 - componentDidUpdate()
 
+#### Component Types
+
+Sometimes components are informally classified as **presentational** or **container** components.
+
+**Presentational components** are ones that are mainly concerned with rendering the "view" based on data that is passed to them via props. Typically such components do not maintain their own local state. **Container components** are used to "make things work". They fetch data, maintain their own state and make use of presentational components for rendering by providing their status to them.
+
 #### Adding Bootstrap to a React app
 
 Bootstrap can be easily installed using yarn just by adding the `bootstrap` package. However, the JavaScript part of Bootstrap cannot be directly used together with React. A Bootstrap-based packaged called `Reactstrap` provides a solution to this problem. Reactstrap supplies Bootstrap components re-implemented using React components (similar to JavaScript components re-implemented using React components in Reactstrap).
