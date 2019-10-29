@@ -15,7 +15,7 @@ function RenderDish( {dish} ) {
   );
 }
 
-function RenderComments( {comments} ) {
+function RenderComments( {comments, dishId, addComment} ) {
 
   if (comments == null || comments.length === 0) {
     return (
@@ -33,12 +33,15 @@ function RenderComments( {comments} ) {
   });
 
   return (
-    <div>
-      <h4>Comments</h4>
-      <ul className="list-unstyled">
-        { renderedComments }
-      </ul>
-    </div>
+    <React.Fragment>
+      <div>
+        <h4>Comments</h4>
+        <ul className="list-unstyled">
+          { renderedComments }
+        </ul>
+      </div>
+      <CommentForm dishId={dishId} addComment={addComment}/>
+    </React.Fragment>
   );
 
 }
@@ -63,8 +66,7 @@ const DishDetail = (props) => {
             <RenderDish dish={props.dish} />
           </div>
           <div className="col-12 col-md-5 m-1">
-            <RenderComments comments={props.comments} />
-            <CommentForm />
+            <RenderComments comments={props.comments} addComment={props.addComment} dishId={props.dish.id} />
           </div>
         </div>
     </div>
