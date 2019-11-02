@@ -17,7 +17,7 @@ function RenderDish( {dish} ) {
   );
 }
 
-function RenderComments( {comments, dishId, addComment} ) {
+function RenderComments( {comments, dishId, postComment} ) {
 
   if (comments == null || comments.length === 0) {
     return (
@@ -42,7 +42,7 @@ function RenderComments( {comments, dishId, addComment} ) {
           { renderedComments }
         </ul>
       </div>
-      <CommentForm dishId={dishId} addComment={addComment}/>
+      <CommentForm dishId={dishId} postComment={postComment}/>
     </React.Fragment>
   );
 
@@ -88,7 +88,7 @@ const DishDetail = (props) => {
             <RenderDish dish={props.dish} />
           </div>
           <div className="col-12 col-md-5 m-1">
-            <RenderComments comments={props.comments} addComment={props.addComment} dishId={props.dish.id} />
+            <RenderComments comments={props.comments} postComment={props.postComment} dishId={props.dish.id} />
           </div>
         </div>
       </div>

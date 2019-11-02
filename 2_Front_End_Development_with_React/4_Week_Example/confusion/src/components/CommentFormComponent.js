@@ -24,7 +24,7 @@ class CommentForm extends Component {
 
   handleSubmit(values) {
     this.toggleModal()
-    this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
+    this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);
   }
 
   render() {
@@ -57,8 +57,8 @@ class CommentForm extends Component {
                   <Errors className="text-danger" model=".author" show="touched"
                           messages={{
                             required: 'Required. ',
-                            minLength: 'Must be greater than 2 numbers. ',
-                            maxLength: 'Must be 15 numbers or less. '
+                            minLength: 'Must be greater than 2 characters. ',
+                            maxLength: 'Must be 15 characters or less. '
                           }} />
                 </Col>
               </Row>
